@@ -1,0 +1,5 @@
+# Terraform
+.terraform/
+
+# Minikube binary
+minikube-linux-amd64
