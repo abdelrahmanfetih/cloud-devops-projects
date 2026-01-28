@@ -6,3 +6,6 @@ minikube-linux-amd64
 
 # Scenario artifacts (do not commit generated logs)
 01-linux-git-foundations/artifacts/disk-logs/
+
+# Health check reports (generated)
+01-linux-git-foundations/artifacts/health-reports/
