@@ -21,5 +21,17 @@ spec:
           env:
             - name: PORT
               value: "8080"
-            - name: REQUIRED_TOKEN
-              value: "dev"
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 8080
+            initialDelaySeconds: 2
+            periodSeconds: 5
+            failureThreshold: 2
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
