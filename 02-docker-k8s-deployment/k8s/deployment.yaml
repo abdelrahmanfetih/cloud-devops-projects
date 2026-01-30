@@ -25,7 +25,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: sample-app-secret
-                  key: REQUIRED_TOKEN_WRONG
+                  key: REQUIRED_TOKEN
           readinessProbe:
             httpGet:
               path: /readyz
