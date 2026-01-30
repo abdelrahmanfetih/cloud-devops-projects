@@ -37,7 +37,8 @@ jobs:
       - name: Build image (no push)
         uses: docker/build-push-action@v6
         with:
-          context: 02-docker-k8s-deployment/app
+          context: 02-docker-k8s-deployment/app/sample-app
+          file: 02-docker-k8s-deployment/app/sample-app/Dockerfile
           load: true
           tags: ${{ env.IMAGE_NAME }}:ci
 
@@ -49,7 +50,8 @@ jobs:
       - name: Push image (commit sha tag)
         uses: docker/build-push-action@v6
         with:
-          context: 02-docker-k8s-deployment/app
+          context: 02-docker-k8s-deployment/app/sample-app
+          file: 02-docker-k8s-deployment/app/sample-app/Dockerfile
           push: true
           tags: |
             ${{ env.IMAGE_NAME }}:${{ github.sha }}
