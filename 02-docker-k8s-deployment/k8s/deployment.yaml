@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: sample-app
-          image: sample-app:local
-          imagePullPolicy: IfNotPresent
+          image: ghcr.io/abdelrahmanfetih/cloud-devops-projects/demo-app:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
