@@ -22,7 +22,10 @@ spec:
             - name: PORT
               value: "8080"
             - name: REQUIRED_TOKEN
-              value: "dev"
+              valueFrom:
+                secretKeyRef:
+                  name: sample-app-secret
+                  key: REQUIRED_TOKEN
           readinessProbe:
             httpGet:
               path: /readyz
